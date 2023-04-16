@@ -3,7 +3,7 @@ import { Connection, PublicKey, LAMPORTS_PER_SOL } from '@solana/web3.js'
 
 interface UserInstructionStore extends State {
   ixs: String;
-  getUserInstructionsBalance: (publicKey: PublicKey, connection: Connection) => void
+  getUserInstruction: (publicKey: PublicKey, connection: Connection) => void
 }
 
 const useUserInstructionStore = create<UserInstructionStore>((set, _get) => ({

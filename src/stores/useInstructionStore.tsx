@@ -31,7 +31,7 @@ const useUserInstructionStore = create<UserInstructionStore>((set, _get) => ({
         console.log(count + "********************END************************" + count)
         count++;
       }
-    let ixs = "";
+    let ixs = [];
     try {
       //ixs = ;
     } catch (e) {

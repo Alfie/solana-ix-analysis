@@ -28,7 +28,6 @@ const useUserInstructionStore = create<UserInstructionStore>((set, _get) => ({
         console.log(count + "********************END************************" + count)
         count++;
       }
-      /*
     let ixs = "";
     try {
       //ixs = ;
@@ -36,9 +35,9 @@ const useUserInstructionStore = create<UserInstructionStore>((set, _get) => ({
       console.log('error getting instructions: ', e);
     }
     set((s) => {
-      s.ixs = ixs;
-      console.log('ixs updated', ixs);
-    })*/
+      s.ixs = resolvedTxns;
+      console.log('ixs updated', resolvedTxns);
+    })
   },
 }));
   

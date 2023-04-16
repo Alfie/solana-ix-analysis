@@ -14,7 +14,8 @@ const useUserInstructionStore = create<UserInstructionStore>((set, _get) => ({
     //TODO: change to for reverse for performance
     txnSigs.forEach(({signature}) => txns.push(connection.getTransaction(signature)));
     const resolvedTxns = await Promise.all(txns);
-    
+
+    let count = 0;    
     for(const tx of resolvedTxns){
         console.log(count + "*********************START***********************" + count)
         console.log("account key array: ",tx.transaction.message.accountKeys);

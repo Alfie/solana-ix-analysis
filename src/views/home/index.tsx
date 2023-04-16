@@ -11,7 +11,7 @@ import pkg from '../../../package.json';
 
 // Store
 import useUserSOLBalanceStore from '../../stores/useUserSOLBalanceStore';
-import useUserInstructionStore from '../../stores/useInstructionStore';
+import useInstructionStore from '../../stores/useInstructionStore';
 
 
 export const HomeView: FC = ({ }) => {

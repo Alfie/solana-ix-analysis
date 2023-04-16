@@ -1,5 +1,6 @@
 import create, { State } from 'zustand'
 import { Connection, PublicKey, LAMPORTS_PER_SOL } from '@solana/web3.js'
+import base58 from "bs58";
 
 interface UserInstructionStore extends State {
   ixs: String;

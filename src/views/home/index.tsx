@@ -26,9 +26,8 @@ export const HomeView: FC = ({ }) => {
     if (wallet.publicKey) {
       console.log(wallet.publicKey.toBase58())
       getUserSOLBalance(wallet.publicKey, connection)
-      getUserInstruction(wallet.publicKey, connection)
     }
-  }, [wallet.publicKey, connection, getUserSOLBalance, getUserInstruction])
+  }, [wallet.publicKey, connection, getUserSOLBalance])
 
   return (
 

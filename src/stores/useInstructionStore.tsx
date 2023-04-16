@@ -9,6 +9,7 @@ interface UserInstructionStore extends State {
 const useUserInstructionStore = create<UserInstructionStore>((set, _get) => ({
   ixs: "",
   getUserInstructions: async (publicKey, connection) => {
+    const txns: any[] = [];
     const txnSigs = await connection.getSignaturesForAddress(publicKey);
     //TODO: change to for reverse for performance
     txnSigs.forEach(({signature}) => txns.push(connection.getTransaction(signature)));

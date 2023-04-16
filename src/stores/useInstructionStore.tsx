@@ -3,12 +3,12 @@ import { Connection, PublicKey, LAMPORTS_PER_SOL } from '@solana/web3.js'
 import base58 from "bs58";
 
 interface UserInstructionStore extends State {
-  ixs: String;
+  ixs: any[];
   getUserInstructions: (publicKey: PublicKey, connection: Connection) => void
 }
 
 const useUserInstructionStore = create<UserInstructionStore>((set, _get) => ({
-  ixs: any[],
+  ixs: [],
   getUserInstructions: async (publicKey, connection) => {
     const txns: any[] = [];
     const txnSigs = await connection.getSignaturesForAddress(publicKey);

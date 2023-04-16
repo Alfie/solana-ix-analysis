@@ -11,6 +11,8 @@ import pkg from '../../../package.json';
 
 // Store
 import useUserSOLBalanceStore from '../../stores/useUserSOLBalanceStore';
+import useUserInstructionStore from '../../stores/useUserInstructionStore';
+
 
 export const HomeView: FC = ({ }) => {
   const wallet = useWallet();
@@ -18,13 +20,15 @@ export const HomeView: FC = ({ }) => {
 
   const balance = useUserSOLBalanceStore((s) => s.balance)
   const { getUserSOLBalance } = useUserSOLBalanceStore()
+  const { getUserInstruction } = useUserInstructionStore()
 
   useEffect(() => {
     if (wallet.publicKey) {
       console.log(wallet.publicKey.toBase58())
       getUserSOLBalance(wallet.publicKey, connection)
+      getUserInstruction(wallet.publicKey, connection)
     }
-  }, [wallet.publicKey, connection, getUserSOLBalance])
+  }, [wallet.publicKey, connection, getUserSOLBalance, getUserInstruction])
 
   return (
 
